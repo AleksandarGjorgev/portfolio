@@ -119,7 +119,9 @@ export default function Skills() {
                       <Image
                         src={rankIcons[skill.rank]}
                         alt={`Rank ${skill.rank}`}
-                        className="w-8 h-8"
+                        width={32}
+                        height={32}
+                        className="object-cover"
                       />
                     )}
                   </li>

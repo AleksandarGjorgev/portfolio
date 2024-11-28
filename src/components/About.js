@@ -31,11 +31,13 @@ export default function About() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             >
             <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-                <Image
+              <Image
                 src="/images/profile.jpg"
                 alt="Aleksandar Gjorgev"
-                className="w-full h-full object-cover"
-                />
+                width={224} // Dodajte širino
+                height={224} // Dodajte višino
+                className="object-cover"
+              />
             </div>
             <div className="absolute inset-0 bg-accent opacity-0 transition-all duration-300 rounded-full"></div>
         </motion.div>
@@ -49,7 +51,7 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-sm md:text-lg">
-            Hello! I'm <span className="text-accent font-bold">Aleksandar Gjorgev</span>, a Fullstack Developer with a
+            Hello! I&apos;m <span className="text-accent font-bold">Aleksandar Gjorgev</span>, a Fullstack Developer with a
             passion for crafting efficient and scalable software solutions. My expertise spans modern frontend and
             backend technologies, focusing on clean and maintainable code.
           </p>
@@ -94,7 +96,7 @@ export default function About() {
         <div className="bg-card p-6 rounded-lg shadow-md">
           <h3 className="text-lg font-bold text-accent mb-4">Fun Facts</h3>
           <ul className="list-disc pl-5 text-sm md:text-base text-muted space-y-2">
-            <li>Started coding at 13 years old and haven't stopped since.</li>
+            <li>Started coding at 13 years old and haven&apos;t stopped since.</li>
             <li>Always excited to learn new technologies and frameworks.</li>
             <li>I have developed multiple personal projects for fun and learning.</li>
           </ul>

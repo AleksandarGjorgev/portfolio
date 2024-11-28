@@ -28,14 +28,14 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed p-2 left-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-card shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Animated Logo */}
         <motion.div
-          className="text-accent text-2xl font-bold cursor-pointer"
+          className="text-accent text-3xl font-bold cursor-pointer"
           initial={{ scale: 1 }}
           whileHover={{ scale: 1.2, rotate: 10 }}
           transition={{ type: "spring", stiffness: 300 }}
@@ -48,14 +48,14 @@ export default function Navbar() {
         </motion.div>
 
         {/* Menu */}
-        <ul className="flex items-center gap-6 text-sm md:text-base">
+        <ul className="flex font-bold  items-center gap-6 text-2xl md:text-2xl">
           {menuItems.map((item) => (
             <li key={item.name} className="relative group">
-              <Link href={item.href} className="hover:text-accent transition">
+              <Link href={item.href} className="hover:text-accent ml-2 mr-2 transition">
                 {item.name}
               </Link>
               {/* Underline on hover */}
-              <div className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              <div className="absolute bottom-[-4px] ml-2 mr-2 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
             </li>
           ))}
         </ul>
