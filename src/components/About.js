@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import {
   FaBrain,
   FaHandsHelping,
@@ -30,7 +31,7 @@ export default function About() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             >
             <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-                <img
+                <Image
                 src="/images/profile.jpg"
                 alt="Aleksandar Gjorgev"
                 className="w-full h-full object-cover"

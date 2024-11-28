@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from 'next/image';
 import {
   FaPython,
   FaReact,
@@ -115,7 +116,7 @@ export default function Skills() {
                       <span className="text-white text-lg">{skill.name}</span>
                     </div>
                     {skill.rank && (
-                      <img
+                      <Image
                         src={rankIcons[skill.rank]}
                         alt={`Rank ${skill.rank}`}
                         className="w-8 h-8"
