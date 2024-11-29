@@ -61,13 +61,13 @@ export default function Skills() {
       ],
     },
     {
-        category: "Tools & Technologies",
-        skills: [
-          { name: "Git (Version Control)", icon: FaGitAlt, rank: 3, color: "text-red-500" },
-          { name: "WordPress (CMS)", icon: FaWordpress, rank: 2, color: "text-blue-700" },
-          { name: "Docker", icon: FaDocker, rank: 1, color: "text-blue-600" },
-        ],
-      },
+      category: "Tools & Technologies",
+      skills: [
+        { name: "Git (Version Control)", icon: FaGitAlt, rank: 3, color: "text-red-500" },
+        { name: "WordPress (CMS)", icon: FaWordpress, rank: 2, color: "text-blue-700" },
+        { name: "Docker", icon: FaDocker, rank: 1, color: "text-blue-600" },
+      ],
+    },
     {
       category: "Database Management",
       skills: [
@@ -89,7 +89,7 @@ export default function Skills() {
 
   return (
     <motion.section
-      className="py-16 bg-background text-center"
+      className="py-16 px-4 bg-background text-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -97,7 +97,7 @@ export default function Skills() {
       <h2 className="text-3xl font-bold text-accent mb-8">Skills</h2>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {categorizedSkills.map((category, categoryIndex) => (
           <div key={categoryIndex} className="bg-card p-6 rounded-lg shadow-md">
             {/* Category Title */}

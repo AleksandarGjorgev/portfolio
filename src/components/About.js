@@ -14,7 +14,7 @@ import {
 export default function About() {
   return (
     <motion.section
-      className="py-16 bg-background text-center md:text-left"
+      className="py-8 px-4 bg-background text-center md:text-left"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -25,23 +25,20 @@ export default function About() {
       <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-6xl mx-auto">
         {/* Profile Image */}
         <motion.div
-            className="relative group w-full md:w-1/3 flex justify-center"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-            <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-4 border-accent shadow-lg overflow-hidden">
-              <Image
-                src="/images/profile.jpg"
-                alt="Aleksandar Gjorgev"
-                width={224} // Dodajte širino
-                height={224} // Dodajte višino
-                className="object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 bg-accent opacity-0 transition-all duration-300 rounded-full"></div>
+          className="relative group w-40 h-48 md:w-56 md:h-72 rounded-full border-4 border-accent shadow-lg overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <Image
+            src="/images/profile.jpg"
+            alt="Aleksandar Gjorgev"
+            width={224}
+            height={224}
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-accent opacity-0 transition-all duration-300 rounded-full"></div>
         </motion.div>
-
 
         {/* Personal Information */}
         <motion.div
@@ -69,11 +66,11 @@ export default function About() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        {[
+        {[ 
           { icon: FaBrain, label: "Problem-Solving", color: "text-yellow-400" },
           { icon: FaHandsHelping, label: "Team Collaboration", color: "text-green-500" },
           { icon: FaTrophy, label: "Adaptability", color: "text-blue-500" },
-          { icon: FaStar, label: "Self-Motivation", color: "text-accent" },
+          { icon: FaStar, label: "Self-Motivation", color: "text-accent" }
         ].map((strength, index) => (
           <div
             key={index}

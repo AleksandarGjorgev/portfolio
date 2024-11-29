@@ -31,7 +31,7 @@ export default function Timeline() {
       date: "May 2023 - Jul 2023",
       title: "Frontend Developer",
       description:
-        "Developed a car booking platform using Laravel and Docker. Implemented frontend components with JavaScript and Vue.js, ensuring a seamless user experience. Used Docker for containerization to maintain a consistent development environment. Collaborated closely with backend developers to integrate APIs and improve the platform's performance. for Avant Car",
+        "Developed a car booking platform using Laravel and Docker. Implemented frontend components with JavaScript and Vue.js, ensuring a seamless user experience. Used Docker for containerization to maintain a consistent development environment. Collaborated closely with backend developers to integrate APIs and improve the platform's performance. at Avant Car",
       link: "https://www.avantcar.si",
     },
     {
@@ -53,10 +53,8 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="relative text-white py-16 px-8">
-      <h2 className="text-center text-4xl font-bold text-accent mb-12">
-        My Timeline
-      </h2>
+    <div className="relative text-white py-16 px-4 sm:px-8">
+      <h2 className="text-center text-4xl font-bold text-accent mb-12">My Timeline</h2>
       <div className="relative max-w-5xl mx-auto">
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-600"></div>
         <div className="space-y-12">
@@ -67,25 +65,23 @@ export default function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative flex ${
-                index % 2 === 0 ? "justify-start" : "justify-end"
+              className={`relative flex flex-col sm:flex-row ${
+                index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
               }`}
             >
               {/* Dot */}
               <div
                 className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full ${
-                  event.type === "Education" ? "bg-blue-500" : "bg-green-500"
+                  event.type === "Education" ? "bg-green-500" : "bg-blue-500"
                 } border-4 border-gray-900`}
               ></div>
               {/* Event Content */}
               <div
-                className={`w-[350px] bg-gray-800 p-6 rounded-lg shadow-lg ${
-                  index % 2 === 0 ? "ml-8" : "mr-8"
+                className={`w-full sm:w-[350px] bg-gray-800 p-6 rounded-lg shadow-lg ${
+                  index % 2 === 0 ? "sm:ml-8" : "sm:mr-8"
                 }`}
               >
-                <time className="text-sm font-light text-gray-400">
-                  {event.date}
-                </time>
+                <time className="text-sm font-light text-gray-400">{event.date}</time>
                 <h3 className="text-xl font-semibold mt-2">{event.title}</h3>
                 {event.link && (
                   <a
@@ -94,15 +90,14 @@ export default function Timeline() {
                     rel="noopener noreferrer"
                     className="text-accent mt-1 mb-2 inline-block"
                   >
-                  <h4 className="text-lg font-medium text-accent mt-1">
-                    {event.description.split(' at ')[1]}
-                  </h4>
+                    <h4 className={`text-lg font-medium mt-1 ${event.type === "Education" ? "text-green-500" : "text-blue-500"}`}>
+                      {event.description.split(" at ")[1]}
+                    </h4>
                   </a>
                 )}
                 <p className="mt-2 text-gray-300">
-                  {event.description.split(' at ')[0]}
+                  {event.description.split(" at ")[0]}
                 </p>
-
               </div>
             </motion.div>
           ))}

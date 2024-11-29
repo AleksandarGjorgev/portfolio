@@ -20,19 +20,19 @@ export default function Contact() {
 
   return (
     <motion.section
-      className="py-16 text-foreground"
+      className="py-8 px-4 text-foreground"
       id="contact"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="text-4xl font-bold text-accent text-center mb-8">
+      <h2 className="text-3xl font-bold text-accent text-center mb-8">
         Contact Me
       </h2>
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:justify-between gap-12">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12">
         {/* Contact Information */}
         <div className="flex flex-col space-y-6 md:w-1/3">
-          <h3 className="text-2xl font-extrabold text-center">Aleksandar Gjorgev</h3>
+          <h3 className="text-2xl font-extrabold text-center md:text-left">Aleksandar Gjorgev</h3>
           {/* Address */}
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="text-accent text-2xl" />
@@ -73,7 +73,7 @@ export default function Contact() {
         </div>
 
         {/* Contact Form */}
-        <form className="md:w-2/3 space-y-6" onSubmit={handleSubmit}>
+        <form className="w-full md:w-2/3 space-y-6" onSubmit={handleSubmit}>
           <motion.input
             type="text"
             name="name"
@@ -100,7 +100,7 @@ export default function Contact() {
           />
           <motion.button
             type="submit"
-            className="w-full bg-accent text-white py-4 rounded-lg shadow-lg hover:bg-blue-700 transition-all focus:outline-none focus:ring-4 focus:ring-accent focus:ring-opacity-50"
+            className="w-full bg-accent text-white py-4 rounded-lg shadow-lg hover:bg-blue-500 transition-all focus:outline-none focus:ring-4 focus:ring-accent focus:ring-opacity-50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
