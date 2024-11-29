@@ -64,14 +64,14 @@ export default function Hero() {
         >
           <a
             href="#contact"
-            className="px-6 py-2 bg-accent text-white rounded-lg shadow hover:bg-blue-700 transition-all"
+            className="px-6 py-2 z-50 bg-accent text-white rounded-lg shadow hover:bg-blue-600 transition-all"
           >
             Hire Me
           </a>
           <a
             href="/files/Aleksandar_Gjorgev_CV.pdf" // Replace with the actual CV path
             download
-            className="px-6 py-2 bg-transparent border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all"
+            className="px-6 py-2 z-50 bg-transparent border border-accent text-accent rounded-lg hover:bg-accent hover:text-white transition-all"
           >
             Download CV
           </a>
@@ -88,7 +88,7 @@ export default function Hero() {
             href="https://linkedin.com/in/aleksandar-gjorgev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-accent hover:text-blue-500 transition-all"
+            className="text-2xl z-50 text-accent hover:text-blue-600 transition-all"
           >
             <FaLinkedin />
           </a>
@@ -96,7 +96,7 @@ export default function Hero() {
             href="https://github.com/AleksandarGjorgev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl text-accent hover:text-blue-500 transition-all"
+            className="text-2xl z-50 text-accent hover:text-blue-600 transition-all"
           >
             <FaGithub />
           </a>

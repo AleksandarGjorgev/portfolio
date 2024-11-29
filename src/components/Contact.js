@@ -32,7 +32,6 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row md:justify-between gap-8 md:gap-12">
         {/* Contact Information */}
         <div className="flex flex-col space-y-6 md:w-1/3">
-          <h3 className="text-2xl font-extrabold text-center md:text-left">Aleksandar Gjorgev</h3>
           {/* Address */}
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="text-accent text-2xl" />

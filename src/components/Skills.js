@@ -33,12 +33,11 @@ export default function Skills() {
       skills: [
         { name: "Python", icon: FaPython, rank: 3, color: "text-yellow-400" },
         { name: "HTML & CSS", icon: FaHtml5, rank: 3, color: "text-orange-500" },
-        { name: "Node.js", icon: FaNodeJs, rank: 3, color: "text-green-500" },
         { name: "C#", icon: SiCplusplus, rank: 2, color: "text-blue-500" },
         { name: "JavaScript", icon: FaJsSquare, rank: 2, color: "text-yellow-300" },
-        { name: "PHP", icon: FaPhp, rank: 2, color: "text-violet-500" },
         { name: "SQL", icon: SiMysql, rank: 2, color: "text-blue-400" },
         { name: "C++", icon: SiCplusplus, rank: 2, color: "text-blue-500" },
+        { name: "PHP", icon: FaPhp, rank: 1, color: "text-violet-500" },
       ],
     },
     {
@@ -55,17 +54,18 @@ export default function Skills() {
       category: "Back-End Development",
       skills: [
         { name: "Flask", icon: SiFlask, rank: 3, color: "text-gray-400" },
+        { name: "Node.js", icon: FaNodeJs, rank: 2, color: "text-green-500" },
         { name: "Laravel", icon: FaLaravel, rank: 2, color: "text-red-500" },
-        { name: "SOAP Integration", icon: FaTools, rank: 2, color: "text-gray-500" },
-        { name: "RESTful API Development", icon: FaTools, rank: 2, color: "text-gray-500" },
+        { name: "SOAP", icon: FaTools, rank: 2, color: "text-gray-500" },
       ],
     },
     {
       category: "Tools & Technologies",
       skills: [
-        { name: "Git (Version Control)", icon: FaGitAlt, rank: 3, color: "text-red-500" },
-        { name: "WordPress (CMS)", icon: FaWordpress, rank: 2, color: "text-blue-700" },
+        { name: "Git", icon: FaGitAlt, rank: 3, color: "text-red-500" },
+        { name: "WordPress", icon: FaWordpress, rank: 2, color: "text-blue-700" },
         { name: "Docker", icon: FaDocker, rank: 1, color: "text-blue-600" },
+        { name: "npm", icon: FaTools, rank: 2, color: "text-red-500" },
       ],
     },
     {
@@ -81,11 +81,12 @@ export default function Skills() {
         { name: "Teamwork", icon: FaStar, color: "text-yellow-300" },
         { name: "Adaptability", icon: FaStar, color: "text-yellow-300" },
         { name: "Communication", icon: FaStar, color: "text-yellow-300" },
-        { name: "Problem-Solving Under Pressure", icon: FaStar, color: "text-yellow-300" },
+        { name: "Problem-Solving", icon: FaStar, color: "text-yellow-300" },
         { name: "Self-Motivation", icon: FaStar, color: "text-yellow-300" },
       ],
     },
   ];
+  
 
   return (
     <motion.section

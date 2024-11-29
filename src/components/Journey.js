@@ -19,20 +19,20 @@ export default function Timeline() {
       link: "https://www.methodyca.com",
     },
     {
-      type: "Education",
-      date: "Oct 2023 - Present",
-      title: "College Diploma (Ongoing)",
-      description:
-        "Specializing in programming, cloud computing, and API integrations. Learned modern web development frameworks, including React and Node.js. at Sofizo d.o.o",
-      link: "https://www.sofizo.si",
-    },
-    {
       type: "Work",
       date: "May 2023 - Jul 2023",
       title: "Frontend Developer",
       description:
         "Developed a car booking platform using Laravel and Docker. Implemented frontend components with JavaScript and Vue.js, ensuring a seamless user experience. Used Docker for containerization to maintain a consistent development environment. Collaborated closely with backend developers to integrate APIs and improve the platform's performance. at Avant Car",
       link: "https://www.avantcar.si",
+    },
+    {
+      type: "Education",
+      date: "Oct 2023 - Present",
+      title: "College Diploma (Ongoing)",
+      description:
+        "Specializing in programming, cloud computing, and API integrations. Learned modern web development frameworks, including React and Node.js. at Sofizo d.o.o",
+      link: "https://www.sofizo.si",
     },
     {
       type: "Work",

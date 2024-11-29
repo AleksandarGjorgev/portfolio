@@ -31,7 +31,7 @@ export default function About() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Image
-            src="/images/profile.jpg"
+            src="/images/profile.png"
             alt="Aleksandar Gjorgev"
             width={224}
             height={224}
