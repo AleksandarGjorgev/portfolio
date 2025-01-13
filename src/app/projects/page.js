@@ -1,5 +1,5 @@
 "use client";
-import HeroProjects from "@/Components/HeroProjects";
+import HeroProjects from "@/components/HeroProjects";
 import { faFlutter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
