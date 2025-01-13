@@ -1,11 +1,10 @@
 "use client";
-import { motion } from "framer-motion";
-import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Hero from "@/components/Hero";
 import Journey from "@/components/Journey";
 import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
-import ContactReferences from "@/components/References";
+import { motion } from "framer-motion";
 
 export default function HomePage() {
   return (
@@ -50,15 +49,6 @@ export default function HomePage() {
         transition={{ duration: 0.5, delay: 0.9 }}
       >
         <Contact />
-      </motion.section>
-      <hr className="m-10 border-t border-muted my-12" />
-      <motion.section
-        id="references"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
-      >
-        <ContactReferences />
       </motion.section>
     </motion.div>
   );

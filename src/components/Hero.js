@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import Image from "next/image";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (

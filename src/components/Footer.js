@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -30,7 +30,6 @@ export default function Footer() {
           <div className="mb-6 md:mb-0">
             <h4 className="text-lg font-bold mb-4">Contact Information</h4>
             <p className="flex items-center mb-2"><FaEnvelope className="mr-2" /> <a href="mailto:gjorgevaleks@gmail.com" className="hover:underline">gjorgevaleks@gmail.com</a></p>
-            <p className="flex items-center"><FaPhone className="mr-2" /> +386 64 237 459</p>
           </div>
 
           {/* Social Media Section */}

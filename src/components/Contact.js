@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
   const handleSubmit = (e) => {
@@ -37,16 +37,6 @@ export default function Contact() {
           <div className="flex items-center gap-4">
             <FaMapMarkerAlt className="text-accent text-2xl" />
             <span className="text-lg md:text-xl">1000 Ljubljana, Slovenia</span>
-          </div>
-          {/* Phone Number */}
-          <div className="flex items-center gap-4">
-            <FaPhoneAlt className="text-accent text-2xl" />
-            <a
-              href="tel:+38664237569"
-              className="text-lg md:text-xl hover:text-blue-500 transition-all"
-            >
-              +386 64 237 569
-            </a>
           </div>
           {/* Email Address */}
           <div className="flex items-center gap-4">

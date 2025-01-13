@@ -1,24 +1,23 @@
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import {
-  FaPython,
-  FaReact,
-  FaNodeJs,
+  FaBootstrap,
   FaDatabase,
   FaDocker,
   FaGitAlt,
   FaHtml5,
-  FaCss3Alt,
   FaJsSquare,
-  FaPhp,
   FaLaravel,
-  FaStar,
-  FaWordpress,
-  FaTools,
+  FaNodeJs,
+  FaPhp,
+  FaPython,
+  FaReact,
   FaSass,
-  FaBootstrap,
+  FaStar,
+  FaTools,
+  FaWordpress
 } from "react-icons/fa";
-import { SiNextdotjs, SiMysql, SiCplusplus, SiFlask, SiHugo } from "react-icons/si";
+import { SiCplusplus, SiFlask, SiHugo, SiMysql, SiNextdotjs } from "react-icons/si";
 
 export default function Skills() {
   const rankIcons = {

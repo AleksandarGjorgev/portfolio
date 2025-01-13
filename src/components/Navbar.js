@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -21,7 +21,7 @@ export default function Navbar() {
 
   // Menu items
   const menuItems = [
-    { name: "About", href: "/#about" },
+    { name: "Projects", href: "/projects" },
     { name: "Experience", href: "/#journey" },
     { name: "Skills", href: "/#skills" },
     { name: "Contact", href: "/#contact" },
@@ -29,9 +29,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 ${
-        scrolled || menuOpen ? "bg-card shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 ${scrolled || menuOpen ? "bg-card shadow-lg" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Animated Logo */}
@@ -73,9 +72,8 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`absolute top-16 left-0 w-full bg-card p-4 shadow-lg md:hidden ${
-            menuOpen ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
-          }`}
+          className={`absolute top-16 left-0 w-full bg-card p-4 shadow-lg md:hidden ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0 pointer-events-none"
+            }`}
         >
           <ul className="flex flex-col items-center gap-4 font-bold text-xl">
             {menuItems.map((item) => (
