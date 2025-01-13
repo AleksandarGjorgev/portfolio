@@ -1,11 +1,11 @@
 "use client";
+import HeroProjects from "@/Components/HeroProjects";
 import { faFlutter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaBootstrap, FaCss3Alt, FaDocker, FaHtml5, FaJsSquare, FaLaravel, FaNodeJs, FaPhp, FaPython, FaReact, FaTools, FaWordpress } from "react-icons/fa";
 import { SiCplusplus, SiFlask, SiNextdotjs, SiTailwindcss } from "react-icons/si";
-import HeroProjects from "/src/Components/HeroProjects";
 
 const projects = [
   {
