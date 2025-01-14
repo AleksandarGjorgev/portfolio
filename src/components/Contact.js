@@ -2,20 +2,34 @@ import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const message = form.message.value;
 
-    // Ustvarimo mailto povezavo
-    const mailtoLink = `mailto:gjorgevaleks@gmail.com?subject=New message from ${name}&body=${encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    )}`;
+    try {
+      // Pošlji podatke na API ruto
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
 
-    // Odpri e-poštni odjemalec
-    window.location.href = mailtoLink;
+      if (response.ok) {
+        alert("Email successfully sent!");
+        form.reset();
+      } else {
+        const errorData = await response.json();
+        alert(`Failed to send email: ${errorData.error}`);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
