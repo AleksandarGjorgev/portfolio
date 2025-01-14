@@ -25,7 +25,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "Thank you for contacting us!",
+      subject: "Thank you for contacting me!",
       text: `Hi ${name},\n\nThank you for reaching out to me. I have received your message:\n\n"${message}"\n\nI will get back to you shortly.\n\nBest regards,\nAleksandar Gjorgev`,
     });
 
