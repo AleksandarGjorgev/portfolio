@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import Image from 'next/image';
 import {
+  FaBicycle,
   FaBrain,
-  FaHandsHelping,
-  FaTrophy,
-  FaStar,
-  FaFutbol,
   FaChess,
   FaDumbbell,
-  FaBicycle,
+  FaFutbol,
+  FaHandsHelping,
+  FaStar,
+  FaTrophy,
 } from "react-icons/fa";
 
 export default function About() {
@@ -31,7 +31,7 @@ export default function About() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <Image
-            src="/images/profile.jpg"
+            src="/images/profile.png"
             alt="Aleksandar Gjorgev"
             width={224}
             height={224}
@@ -66,7 +66,7 @@ export default function About() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        {[ 
+        {[
           { icon: FaBrain, label: "Problem-Solving", color: "text-yellow-400" },
           { icon: FaHandsHelping, label: "Team Collaboration", color: "text-green-500" },
           { icon: FaTrophy, label: "Adaptability", color: "text-blue-500" },
