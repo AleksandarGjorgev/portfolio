@@ -74,7 +74,7 @@ const projects = [
       { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-200 text-teal-800" }
     ],
     imageUrl: "/projects/gamespot.png",
-    projectUrl: "https://gamespot-kappa.vercel.app",
+    projectUrl: "https://gamespot.si",
   },
   {
     title: "DejaVisuals Website",
