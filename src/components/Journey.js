@@ -206,7 +206,9 @@ export default function Timeline() {
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-accent border-4 border-background shadow-lg">
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-background shadow-lg ${
+                  event.type === "Education" ? "bg-green-400" : "bg-accent"
+                }`}>
                   <FaCode className="text-xs text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                 </div>
 
