@@ -4,7 +4,86 @@
 
 @import "flowbite";
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
+/* Import programerskih fontov */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "liga" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Izboljšave za programerski izgled */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  p, span, a, button, input, textarea {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+  }
+
+  /* Izboljšave za kodo */
+  code {
+    font-family: 'Fira Code', monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  /* Izboljšave za terminalni izgled */
+  .terminal-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* Izboljšave za gumbe */
+  button, a.btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+  }
+
+  /* Izboljšave za navigacijo */
+  nav {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  /* Izboljšave za kartice */
+  .card {
+    font-family: 'Fira Code', monospace;
+  }
+
+  /* Izboljšave za sezname */
+  ul, ol {
+    font-family: 'Fira Code', monospace;
+  }
+
+  /* Izboljšave za vnosna polja */
+  input, textarea, select {
+    font-family: 'Fira Code', monospace;
+  }
+}
+
+/* Dodatne utility klase */
+@layer utilities {
+  .font-code {
+    font-family: 'Fira Code', monospace;
+  }
+
+  .font-terminal {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
 }
