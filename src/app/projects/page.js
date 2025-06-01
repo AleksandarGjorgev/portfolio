@@ -3,7 +3,7 @@ import HeroProjects from "@/components/HeroProjects";
 import { faFlutter } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaBootstrap, FaCss3Alt, FaDocker, FaHtml5, FaJsSquare, FaLaravel, FaNodeJs, FaPhp, FaPython, FaReact, FaTools, FaWordpress, FaCode, FaTerminal, FaFolderOpen } from "react-icons/fa";
 import { SiCplusplus, SiFlask, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
@@ -441,11 +441,14 @@ export default function PortfolioPage() {
   const [currentVideo, setCurrentVideo] = useState(null);
   const [currentProject, setCurrentProject] = useState(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef(null);
 
   const openVideo = (videoUrl, project) => {
     setCurrentVideo(videoUrl);
     setCurrentProject(project);
     setIsVideoOpen(true);
+    setIsVideoPlaying(false);
   };
 
   const openProjectDetails = (project) => {
@@ -454,14 +457,26 @@ export default function PortfolioPage() {
   };
 
   const closeVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
     setCurrentVideo(null);
     setCurrentProject(null);
     setIsVideoOpen(false);
+    setIsVideoPlaying(false);
   };
 
   const closeProjectModal = () => {
     setCurrentProject(null);
     setIsProjectModalOpen(false);
+  };
+
+  const playVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsVideoPlaying(true);
+    }
   };
 
   return (
@@ -576,80 +591,108 @@ export default function PortfolioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-card/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
           onClick={closeVideo}
         >
           <div
-            className="relative w-full max-w-4xl bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-accent/20 my-8"
+            className="relative w-full max-w-2xl bg-card/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-accent/20 my-4 sm:my-8 mx-2 sm:mx-4 shadow-2xl shadow-accent/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              <span className="text-sm text-muted ml-2 font-mono">video.js</span>
-            </div>
-            <button
-              className="absolute top-4 right-4 text-white text-4xl focus:outline-none hover:text-accent transition-colors"
-              onClick={closeVideo}
-            >
-              &times;
-            </button>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="w-full">
-                <video
-                  src={currentVideo}
-                  controls
-                  autoPlay
-                  className="w-full h-auto rounded-lg shadow-lg"
-                ></video>
+            {/* Terminal header in close button container */}
+            <div className="sticky top-0 z-50 pb-4 border-b border-accent/20">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-sm shadow-red-500/50"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 shadow-sm shadow-yellow-500/50"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-sm shadow-green-500/50"></div>
+                  </div>
+                  <span className="text-xs text-muted/80 ml-2 font-mono tracking-wide">video.js</span>
+                </div>
+                <button
+                  className="text-white text-2xl sm:text-4xl focus:outline-none hover:text-accent transition-colors"
+                  onClick={closeVideo}
+                  aria-label="Close video"
+                >
+                  &times;
+                </button>
               </div>
-              <div className="space-y-4 max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar pr-2">
-                <h2 className="text-2xl font-bold text-accent font-mono">{currentProject.title}</h2>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-white/90 whitespace-pre-line">{currentProject.longDescription}</p>
+            </div>
+
+            {/* Scrollable content container */}
+            <div className="max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar pr-2 mt-4">
+              <div className="grid grid-cols-1 gap-6">
+                {/* Video Container - optimiziran za vertikalni video */}
+                <div className="w-full max-w-[280px] mx-auto bg-black/40 rounded-xl overflow-hidden relative shadow-lg shadow-black/20">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                  <video
+                    ref={videoRef}
+                    src={currentVideo}
+                    controls
+                    playsInline
+                    className="w-full h-auto object-contain"
+                    controlsList="nodownload"
+                    onEnded={() => setIsVideoPlaying(false)}
+                  ></video>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-lg font-semibold text-accent font-mono">Technologies Used:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {currentProject.technologies.map((tech, idx) => (
-                      <div
-                        key={idx}
-                        className={`flex items-center gap-2 px-3 py-1 rounded-full shadow-md ${tech.color} text-sm font-mono`}
-                      >
-                        <tech.icon className="text-lg" />
-                        <span>{tech.name}</span>
+
+                {/* Content Container */}
+                <div className="space-y-4">
+                  <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                    <h2 className="text-xl font-bold text-accent font-mono tracking-wide">{currentProject.title}</h2>
+                    <p className="text-sm text-white/90 mt-2">{currentProject.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {currentProject.technologies.map((tech, idx) => (
+                        <div
+                          key={idx}
+                          className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full shadow-md ${tech.color} text-xs font-mono tracking-wide transition-transform hover:scale-105`}
+                        >
+                          <tech.icon className="text-sm" />
+                          <span>{tech.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                    <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Project Overview</h3>
+                    <div className="prose prose-invert max-w-none text-sm">
+                      <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.longDescription}</p>
+                    </div>
+                  </div>
+
+                  {currentProject.challenges && (
+                    <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                      <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Challenges & Solutions</h3>
+                      <div className="prose prose-invert max-w-none text-sm">
+                        <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.challenges}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  )}
+
+                  {currentProject.impact && (
+                    <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                      <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Impact & Results</h3>
+                      <div className="prose prose-invert max-w-none text-sm">
+                        <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.impact}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {currentProject.projectUrl && (
+                    <div className="sticky bottom-0 pt-4 bg-gradient-to-t from-card/80 via-card/40 to-transparent">
+                      <a
+                        href={currentProject.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent/10 hover:bg-accent/20 text-accent rounded-xl hover:shadow-lg hover:shadow-accent/20 transition-all duration-200 font-mono text-sm w-full justify-center group"
+                      >
+                        <FaCode className="text-sm group-hover:scale-110 transition-transform" />
+                        <span className="tracking-wide">Visit Project</span>
+                      </a>
+                    </div>
+                  )}
                 </div>
-                {currentProject.challenges && (
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-accent font-mono">Challenges & Solutions:</h3>
-                    <div className="prose prose-invert max-w-none">
-                      <p className="text-white/90 whitespace-pre-line">{currentProject.challenges}</p>
-                    </div>
-                  </div>
-                )}
-                {currentProject.impact && (
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold text-accent font-mono">Impact & Results:</h3>
-                    <div className="prose prose-invert max-w-none">
-                      <p className="text-white/90 whitespace-pre-line">{currentProject.impact}</p>
-                    </div>
-                  </div>
-                )}
-                {currentProject.projectUrl && (
-                  <a
-                    href={currentProject.projectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors font-mono"
-                  >
-                    <FaCode className="text-lg" />
-                    Visit Project
-                  </a>
-                )}
               </div>
             </div>
           </div>
@@ -662,94 +705,95 @@ export default function PortfolioPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-card/95 backdrop-blur-sm z-50 flex items-start justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 bg-card/95 backdrop-blur-sm z-50 flex items-start justify-center p-2 sm:p-4 overflow-y-auto"
           onClick={closeProjectModal}
         >
           <div
-            className="relative w-full max-w-3xl bg-card/50 backdrop-blur-sm p-6 rounded-lg border border-accent/20 my-8 shadow-xl"
+            className="relative w-full max-w-2xl bg-card/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-accent/20 my-4 sm:my-8 mx-2 sm:mx-4 shadow-2xl shadow-accent/10"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Terminal Header */}
-            <div className="sticky top-0 bg-card/80 backdrop-blur-sm z-10 pb-4 border-b border-accent/20">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                <span className="text-sm text-muted ml-2 font-mono">project.js</span>
+            <div className="sticky top-0 z-50 bg-card/80 backdrop-blur-sm pb-4 border-b border-accent/20">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-500 shadow-sm shadow-red-500/50"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-500 shadow-sm shadow-yellow-500/50"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-sm shadow-green-500/50"></div>
+                  </div>
+                  <span className="text-xs text-muted/80 ml-2 font-mono tracking-wide">project.js</span>
+                </div>
+                <button
+                  className="text-white text-2xl sm:text-4xl focus:outline-none hover:text-accent transition-colors"
+                  onClick={closeProjectModal}
+                  aria-label="Close project details"
+                >
+                  &times;
+                </button>
               </div>
-              <button
-                className="absolute top-4 right-4 text-white text-4xl focus:outline-none hover:text-accent transition-colors"
-                onClick={closeProjectModal}
-              >
-                &times;
-              </button>
-              <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="flex flex-col md:flex-row items-start gap-4 sm:gap-6 mt-4">
                 {currentProject.imageUrl && (
                   <img
                     src={currentProject.imageUrl}
                     alt={currentProject.title}
-                    className="w-full md:w-48 h-48 object-cover rounded-lg"
+                    className="w-full md:w-48 h-32 sm:h-48 object-cover rounded-xl shadow-lg"
                   />
                 )}
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-accent font-mono">{currentProject.title}</h2>
-                  <p className="text-white/90 mt-2">{currentProject.description}</p>
+                  <h2 className="text-xl font-bold text-accent font-mono tracking-wide">{currentProject.title}</h2>
+                  <p className="text-sm text-white/90 mt-2">{currentProject.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {currentProject.technologies.map((tech, idx) => (
+                      <div
+                        key={idx}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full shadow-md ${tech.color} text-xs font-mono tracking-wide transition-transform hover:scale-105`}
+                      >
+                        <tech.icon className="text-sm" />
+                        <span>{tech.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Scrollable Content */}
-            <div className="mt-6 space-y-6 max-h-[calc(100vh-300px)] overflow-y-auto pr-2 custom-scrollbar">
-              <div>
-                <h3 className="text-lg font-semibold text-accent font-mono mb-2">Project Overview</h3>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-white/90 whitespace-pre-line">{currentProject.longDescription}</p>
+            <div className="max-h-[calc(100vh-400px)] overflow-y-auto custom-scrollbar pr-2 mt-4 space-y-4">
+              <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Project Overview</h3>
+                <div className="prose prose-invert max-w-none text-sm">
+                  <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.longDescription}</p>
                 </div>
               </div>
 
               {currentProject.challenges && (
-                <div>
-                  <h3 className="text-lg font-semibold text-accent font-mono mb-2">Challenges & Solutions</h3>
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-white/90 whitespace-pre-line">{currentProject.challenges}</p>
+                <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                  <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Challenges & Solutions</h3>
+                  <div className="prose prose-invert max-w-none text-sm">
+                    <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.challenges}</p>
                   </div>
                 </div>
               )}
 
               {currentProject.impact && (
-                <div>
-                  <h3 className="text-lg font-semibold text-accent font-mono mb-2">Impact & Results</h3>
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-white/90 whitespace-pre-line">{currentProject.impact}</p>
+                <div className="bg-card/60 backdrop-blur-sm p-4 rounded-xl border border-accent/10 shadow-lg">
+                  <h3 className="text-base font-semibold text-accent font-mono tracking-wide mb-2">Impact & Results</h3>
+                  <div className="prose prose-invert max-w-none text-sm">
+                    <p className="text-white/90 whitespace-pre-line leading-relaxed">{currentProject.impact}</p>
                   </div>
                 </div>
               )}
 
-              <div>
-                <h3 className="text-lg font-semibold text-accent font-mono mb-2">Technologies Used</h3>
-                <div className="flex flex-wrap gap-2">
-                  {currentProject.technologies.map((tech, idx) => (
-                    <div
-                      key={idx}
-                      className={`flex items-center gap-2 px-3 py-1 rounded-full shadow-md ${tech.color} text-sm font-mono`}
-                    >
-                      <tech.icon className="text-lg" />
-                      <span>{tech.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {currentProject.projectUrl && (
-                <div className="pt-4 sticky bottom-0 bg-card/80 backdrop-blur-sm py-4">
+                <div className="sticky bottom-0 pt-4 bg-gradient-to-t from-card/80 via-card/40 to-transparent">
                   <a
                     href={currentProject.projectUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-secondary text-white rounded-lg hover:shadow-lg hover:shadow-accent/20 transition-all font-mono"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent/10 hover:bg-accent/20 text-accent rounded-xl hover:shadow-lg hover:shadow-accent/20 transition-all duration-200 font-mono text-sm w-full justify-center group"
                   >
-                    <FaCode className="text-lg" />
-                    Visit Project Website
+                    <FaCode className="text-sm group-hover:scale-110 transition-transform" />
+                    <span className="tracking-wide">Visit Project</span>
                   </a>
                 </div>
               )}
