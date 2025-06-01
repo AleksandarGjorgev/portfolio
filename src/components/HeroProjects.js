@@ -5,7 +5,7 @@ import { FaCode, FaLaptopCode, FaProjectDiagram, FaTerminal, FaFolderOpen, FaGit
 export default function HeroProjects() {
   return (
     <motion.section
-      className="relative w-full min-h-[60vh] md:h-[60vh] flex flex-col justify-center items-center bg-gradient-to-br from-card to-secondary text-white text-center overflow-hidden py-16 md:py-0"
+      className="relative w-full min-h-[60vh] md:h-[60vh] flex flex-col justify-center items-center bg-gradient-to-br from-card to-secondary text-white text-center overflow-hidden py-20 md:py-0"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: "easeOut" }}

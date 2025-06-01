@@ -6,7 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 export default function Hero() {
   return (
     <motion.section
-      className="relative w-full min-h-[85vh] flex flex-col md:flex-row justify-center items-center bg-gradient-to-br from-card to-secondary text-center md:text-left overflow-hidden py-12 md:py-0"
+      className="relative w-full min-h-[85vh] flex flex-col md:flex-row justify-center items-center bg-gradient-to-br from-card to-secondary text-center md:text-left overflow-hidden py-20 md:py-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
