@@ -84,62 +84,98 @@ Technical Implementations:
   },
   {
     title: "Yummzy AI Meal Planner",
-    description: "AI-powered meal planning application with mobile app and website landing page.",
+    description: "Full-stack AI-powered meal planning application with mobile app, backend infrastructure, and cloud deployment.",
     longDescription: `
-Worked on the full-stack frontend of Yummzy, an AI-based meal planning application, focusing on building the Flutter mobile client and the Next.js landing page. Collaborated closely with backend engineers to consume AI-driven endpoints and present personalized meal recommendations.
+Led the complete development of Yummzy, an AI-based meal planning application, from infrastructure setup to deployment. Managed both frontend and backend development, including cloud infrastructure on AWS, database design, and API development.
 
 Key Contributions:
-• Developed Flutter-based mobile screens for user onboarding, dietary profile setup, and daily meal plan display  
-• Implemented state management using Riverpod to handle user preferences, ingredient availability, and AI-generated meal suggestions  
-• Created dynamic recipe cards with nutritional breakdown, calorie counts, and macro/micronutrient visuals  
-• Designed the shopping list UI that syncs with selected recipes and integrates with local store APIs to fetch product availability  
-• Built the Next.js landing page using TailwindCSS, showcasing app features, testimonials, and providing a seamless download link  
-• Integrated Firebase Authentication for user sign-in/sign-up flows, including OAuth (Google, Apple) and email/password methods  
-• Ensured accessibility standards (ARIA labels, focus management) and responsive layouts across iOS and Android devices  
+• Infrastructure & DevOps:
+  - Set up and configured AWS EC2 instance for backend deployment
+  - Implemented Docker containerization for consistent development and production environments
+  - Configured CI/CD pipeline for automated testing and deployment
+  - Managed PostgreSQL database on AWS RDS
+  - Implemented security best practices and SSL/TLS encryption
 
-Key Features (Frontend Perspective):
-• AI-driven personalized meal plan UI with swipe-to-next and swipe-to-skip gestures  
-• Custom recipe generation screens that allow users to add/remove ingredients and see real-time nutritional recalculations  
-• Interactive shopping list with checkboxes and "add to cart" functionality connecting to local store APIs  
-• Dashboard view tracking daily calories, macronutrients, and weekly progress graphs using charts_flutter  
-• Notification system for meal reminders and grocery list prompts using Flutter Local Notifications  
+• Backend Development:
+  - Developed Flask-based REST API with comprehensive endpoints for meal planning
+  - Implemented OpenAI API integration for intelligent meal suggestions
+  - Created robust database schema and optimized PostgreSQL queries
+  - Built authentication system with JWT tokens
+  - Implemented caching layer for improved performance
+  - Developed real-time data synchronization between mobile app and server
 
-Challenges:
-• Optimizing Flutter UI performance when rendering dynamic recipe lists and nutritional graphs  
-• Handling asynchronous calls to the Flask backend for AI recommendations without blocking the UI  
-• Ensuring accurate nutritional data by cross-referencing multiple open food databases  
-• Implementing offline support so users can view saved meal plans and shopping lists without network access  
-• Designing an intuitive UX that balances AI complexity with easy-to-follow user flows  
+• Frontend Development:
+  - Built cross-platform mobile app using Flutter
+  - Implemented state management using Riverpod
+  - Created intuitive UI for meal planning and recipe management
+  - Developed offline-first architecture with local data persistence
+  - Integrated real-time updates and notifications
+  - Implemented secure payment processing
 
-Impact:
-• Expected to improve user adherence to healthy eating habits by 60% through personalized suggestions  
-• Potential to save users 2–3 hours per week in meal planning time  
-• Reduced food waste by leveraging ingredient-based recipe generation  
-• Fostered community engagement via in-app recipe sharing and ratings  
+• AI & Data Management:
+  - Integrated OpenAI API for personalized meal suggestions
+  - Developed algorithm for nutritional analysis and meal optimization
+  - Implemented user preference learning system
+  - Created data aggregation system for recipe management
+  - Built analytics dashboard for user behavior tracking
+
+Technical Stack:
+• Backend:
+  - Flask (Python) for REST API
+  - PostgreSQL for database
+  - Docker for containerization
+  - AWS EC2 for hosting
+  - AWS RDS for database
+  - OpenAI API integration
+  - JWT authentication
+  - Redis for caching
+
+• Frontend:
+  - Flutter for cross-platform mobile development
+  - Riverpod for state management
+  - SQLite for local storage
+  - WebSocket for real-time updates
+  - Custom UI components
+  - Responsive design
+
+• DevOps:
+  - Docker containers
+  - AWS infrastructure
+  - CI/CD pipeline
+  - Automated testing
+  - Monitoring and logging
+  - Security implementation
 `,
     technologies: [
       { name: "Flutter", icon: () => <FontAwesomeIcon icon={faFlutter} />, color: "bg-blue-200 text-blue-800" },
-      { name: "PostgreSQL", icon: FaTools, color: "bg-blue-300 text-blue-900" },
       { name: "Flask", icon: SiFlask, color: "bg-gray-200 text-gray-800" },
+      { name: "PostgreSQL", icon: FaTools, color: "bg-blue-300 text-blue-900" },
       { name: "Docker", icon: FaDocker, color: "bg-blue-200 text-blue-800" },
-      { name: "Next.js", icon: SiNextdotjs, color: "bg-black text-white" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-200 text-teal-800" }
+      { name: "AWS", icon: FaTools, color: "bg-orange-200 text-orange-800" },
+      { name: "REST API", icon: FaTools, color: "bg-green-200 text-green-800" }
     ],
     imageUrl: null,
     projectUrl: null,
     status: "in-progress",
     challenges: `
-• Tuning AI algorithms for accurate recipe personalization based on evolving user preferences  
-• Integrating disparate nutritional data sources to ensure consistency and correctness  
-• Coordinating with backend to handle high-frequency API calls without UI jank  
-• Maintaining data synchronization between mobile app and landing page user sessions  
-• Ensuring secure handling of user dietary data and authentication tokens  
+• Designing and implementing a scalable cloud infrastructure on AWS
+• Ensuring data consistency between mobile app and server
+• Optimizing database queries for large recipe datasets
+• Implementing secure authentication and data encryption
+• Managing real-time updates across multiple devices
+• Balancing AI complexity with app performance
+• Implementing offline-first architecture
+• Ensuring cross-platform compatibility
 `,
     impact: `
-• Improved user meal planning efficiency and adherence to dietary goals  
-• Reduced time spent manually creating shopping lists by automating ingredient aggregation  
-• Encouraged healthy eating habits through actionable nutritional insights  
-• Laid the foundation for community-driven recipe sharing, increasing user retention  
+• Successfully deployed scalable backend infrastructure on AWS
+• Implemented efficient database design for quick recipe retrieval
+• Created robust API architecture for future scalability
+• Developed secure and reliable authentication system
+• Built foundation for AI-powered meal suggestions
+• Established automated deployment pipeline
+• Set up comprehensive monitoring and logging
+• Created maintainable and scalable codebase
 `
   },
   {
