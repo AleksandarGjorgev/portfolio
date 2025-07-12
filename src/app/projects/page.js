@@ -244,6 +244,18 @@ Anticipated Features:
 • Admin dashboard for staff to view and manage appointments, client details, and service inventory  
 • Integration of email/SMS notifications for booking confirmations and reminders  
 • Analytics dashboard showing booking trends, conversion rates, and ad performance metrics  
+
+SEO & Marketing Integration:
+• Local SEO optimization for "Ljubljana cosmetics salon" and related keywords
+• Google My Business optimization and review management
+• Facebook and Instagram business page integration
+• Email marketing automation for customer retention
+• SMS marketing for appointment reminders and promotions
+• Google Ads and Meta Ads campaigns for lead generation
+• Content marketing strategy for beauty and wellness topics
+• Influencer collaboration opportunities
+• Customer loyalty program integration
+• Social media management and community building
 `,
     technologies: [
       { name: "Next.js", icon: SiNextdotjs, color: "bg-black text-white" },
@@ -252,8 +264,8 @@ Anticipated Features:
       { name: "Google Analytics", icon: FaTools, color: "bg-yellow-200 text-yellow-800" },
       { name: "Google Ads & Meta Ads", icon: FaTools, color: "bg-red-200 text-red-800" }
     ],
-    imageUrl: null,
-    projectUrl: null,
+    imageUrl: "/projects/lumen.png",
+    projectUrl: "https://www.lumen-estetika.si",
     status: "in-progress",
     challenges: `
 • Designing an intuitive, mobile-first booking flow that minimizes user friction  
@@ -261,12 +273,19 @@ Anticipated Features:
 • Maintaining SEO best practices while using dynamic client-side rendering in Next.js  
 • Structuring Google Ads and Facebook/Instagram campaigns to maximize ROI for a local salon  
 • Implementing analytics for booking funnels and ad performance in a unified dashboard  
+• Optimizing for local search visibility and Google My Business performance
+• Managing multiple marketing channels and tracking cross-platform attribution
+• Balancing automation with personalized customer experience
 `,
     impact: `
 • Aims to increase online bookings by 50% within three months of launch through optimized UX and marketing campaigns  
 • Expected 30% growth in new client acquisitions through targeted Google Ads and Meta Ads strategies  
 • Improved SEO visibility for local searches (e.g., "Ljubljana cosmetics salon")  
 • Streamlined appointment management for salon staff, reducing no-shows by 25% via automated reminders  
+• Enhanced customer retention through loyalty programs and automated follow-ups
+• Increased brand awareness through social media and influencer partnerships
+• Better ROI tracking and optimization across all marketing channels
+• Improved customer satisfaction through seamless booking experience
 `
   },
   {
@@ -518,6 +537,19 @@ export default function PortfolioPage() {
   return (
     <>
       <HeroProjects />
+      
+      {/* Hidden backlinks for SEO */}
+      <div className="hidden">
+        <a href="https://www.lumen-estetika.si">Lumen Estetika - Kozmetični salon Ljubljana</a>
+        <a href="https://www.lumen-estetika.si/rezervacije">Rezervacije kozmetičnih storitev</a>
+        <a href="https://www.lumen-estetika.si/storitve">Kozmetične storitve Ljubljana</a>
+        <a href="https://www.lumen-estetika.si/cenik">Cenik kozmetičnih storitev</a>
+        <a href="https://www.lumen-estetika.si/kontakt">Kontakt Lumen Estetika</a>
+        <span>Kozmetični salon Ljubljana - Lumen Estetika</span>
+        <span>Rezervacije kozmetičnih storitev Ljubljana</span>
+        <span>Najboljši kozmetični salon v Ljubljani</span>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -547,6 +579,12 @@ export default function PortfolioPage() {
           <p className="text-lg text-muted mt-2 font-mono text-center">
             <span className="text-accent">//</span> A showcase of my work and the technologies I used
           </p>
+          
+          {/* Hidden backlink in description */}
+          <div className="hidden">
+            <a href="https://www.lumen-estetika.si">Kozmetični salon Ljubljana</a>
+            <span>Lumen Estetika - profesionalni kozmetični salon</span>
+          </div>
         </motion.section>
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 my-20">
@@ -616,12 +654,24 @@ export default function PortfolioPage() {
                   ))}
                 </div>
               </div>
+              
+              {/* Hidden backlinks for Lumen project */}
+              {project.title === "Lumen Cosmetics Salon" && (
+                <div className="hidden">
+                  <a href="https://www.lumen-estetika.si">Lumen Estetika</a>
+                  <a href="https://www.lumen-estetika.si/rezervacije">Rezervacije</a>
+                  <a href="https://www.lumen-estetika.si/storitve">Kozmetične storitve</a>
+                  <a href="https://www.lumen-estetika.si/cenik">Cenik</a>
+                  <span>Kozmetični salon Ljubljana</span>
+                  <span>Najboljši kozmetični salon</span>
+                </div>
+              )}
             </motion.div>
           ))}
         </section>
       </motion.div>
 
-      {/* Video Modal */}
+      {/* Video Modal with hidden backlinks */}
       {isVideoOpen && currentProject && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -634,6 +684,12 @@ export default function PortfolioPage() {
             className="relative w-full max-w-2xl bg-card/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-accent/20 my-4 sm:my-8 mx-2 sm:mx-4 shadow-2xl shadow-accent/10"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Hidden backlinks in modal */}
+            <div className="hidden">
+              <a href="https://www.lumen-estetika.si">Lumen Estetika - Kozmetični salon</a>
+              <span>Profesionalni kozmetični salon Ljubljana</span>
+            </div>
+            
             {/* Terminal header in close button container */}
             <div className="sticky top-0 z-50 pb-4 border-b border-accent/20">
               <div className="flex items-center justify-between">
@@ -735,7 +791,7 @@ export default function PortfolioPage() {
         </motion.div>
       )}
 
-      {/* Project Details Modal */}
+      {/* Project Details Modal with hidden backlinks */}
       {isProjectModalOpen && currentProject && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -748,6 +804,13 @@ export default function PortfolioPage() {
             className="relative w-full max-w-2xl bg-card/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-accent/20 my-4 sm:my-8 mx-2 sm:mx-4 shadow-2xl shadow-accent/10"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Hidden backlinks in project modal */}
+            <div className="hidden">
+              <a href="https://www.lumen-estetika.si">Lumen Estetika</a>
+              <a href="https://www.lumen-estetika.si/rezervacije">Rezervacije kozmetičnih storitev</a>
+              <span>Kozmetični salon Ljubljana - Lumen Estetika</span>
+            </div>
+            
             {/* Terminal Header */}
             <div className="sticky top-0 z-50 bg-card/80 backdrop-blur-sm pb-4 border-b border-accent/20">
               <div className="flex items-center justify-between">
