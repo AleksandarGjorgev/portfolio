@@ -154,9 +154,8 @@ Technical Stack:
       { name: "AWS", icon: FaTools, color: "bg-orange-200 text-orange-800" },
       { name: "REST API", icon: FaTools, color: "bg-green-200 text-green-800" }
     ],
-    imageUrl: null,
-    projectUrl: null,
-    status: "in-progress",
+    imageUrl: "/projects/yummzy.png",
+    projectUrl: "https://www.yummzy.ai",
     challenges: `
 • Designing and implementing a scalable cloud infrastructure on AWS
 • Ensuring data consistency between mobile app and server
