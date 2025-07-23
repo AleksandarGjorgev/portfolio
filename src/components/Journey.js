@@ -5,7 +5,7 @@ export default function Timeline() {
   const timelineEvents = [
     {
       type: "Education",
-      date: "Sep 2018 - May 2023",
+      date: "2023",
       title: "High School Diploma",
       description: "Comprehensive study of programming fundamentals and IT systems. Developed strong foundation in C++ programming, creating various applications and algorithms. Mastered web development basics through hands-on projects in JavaScript, HTML, and CSS. Gained practical experience in network administration, including setting up and maintaining local networks, troubleshooting hardware issues, and providing IT support. Completed multiple projects involving database management and system administration.",
       location: "SŠTS Šiška, Ljubljana",
@@ -24,7 +24,7 @@ export default function Timeline() {
     },
     {
       type: "Work",
-      date: "Apr 2022 - Jun 2022",
+      date: "2022",
       title: "Frontend Developer (Internship)",
       description: "Led the development of responsive websites using Hugo and Bootstrap frameworks. Implemented modern UI/UX principles to create intuitive user interfaces. Collaborated with senior developers using Git for version control, learning industry best practices. Developed custom components and templates, focusing on accessibility and cross-browser compatibility. Created static sites with optimized performance and SEO best practices. Participated in code reviews and agile development processes.",
       location: "Methodyca",
@@ -44,7 +44,7 @@ export default function Timeline() {
     },
     {
       type: "Education",
-      date: "Oct 2023 - Present",
+      date: "2025",
       title: "College Diploma (Ongoing)",
       description: "Advanced studies in modern software development and cloud technologies. Deep dive into React.js and Node.js, building full-stack applications with modern architecture. Learning cloud computing principles and implementing scalable solutions. Mastering API development and integration, including REST and GraphQL. Working with various databases and implementing security best practices. Developing skills in DevOps and continuous integration/deployment.",
       location: "Sofizo d.o.o",
@@ -63,7 +63,7 @@ export default function Timeline() {
     },
     {
       type: "Work",
-      date: "May 2023 - Jul 2023",
+      date: "2023",
       title: "Frontend Developer",
       description: "Spearheaded the development of a comprehensive car booking platform using Laravel and Vue.js. Designed and implemented a modern, responsive user interface with focus on user experience. Integrated payment gateways and booking systems using REST APIs. Implemented real-time updates and notifications using WebSocket technology. Optimized application performance through code splitting and lazy loading. Collaborated with backend team to design and implement API endpoints. Used Docker for containerization and consistent development environments.",
       location: "Avant Car",
@@ -83,7 +83,7 @@ export default function Timeline() {
     },
     {
       type: "Work",
-      date: "Oct 2023 - Feb 2024",
+      date: "2024",
       title: "Volunteer Soldier",
       description: "Completed intensive military service focusing on leadership development and team management. Led small units in various tactical exercises and operations. Developed strong decision-making skills under pressure and in challenging conditions. Mastered effective communication and coordination in high-stress situations. Gained experience in strategic planning and resource management. Participated in specialized training programs for crisis management and emergency response.",
       location: "Slovenian Armed Forces",
@@ -102,7 +102,7 @@ export default function Timeline() {
     },
     {
       type: "Work",
-      date: "Apr 2024 - Dec 2024",
+      date: "2024",
       title: "Software Developer",
       description: "Led the development of a sophisticated self-service POS system using Flutter for the user interface. Designed and implemented a modern, intuitive kiosk interface with touch-screen optimization. Integrated hardware components including Glory CI-10 cash recycler using SOAP APIs. Developed robust backend services in Python for transaction processing and data management. Implemented secure payment processing systems with encryption and compliance measures. Created comprehensive testing and deployment pipelines. Provided technical support and documentation for system deployment. Collaborated with hardware vendors for seamless integration.",
       location: "Printec Group",
@@ -124,9 +124,9 @@ export default function Timeline() {
     },
     {
       type: "Work",
-      date: "Jan 2024 - Present",
+      date: "2025",
       title: "Software Developer",
-      description: "Full-stack development of applications and supply chain solutions. Leading the development of Yummzy Meal Planner using Flutter for cross-platform mobile development. Implementing OpenAI API integration for intelligent meal suggestions and user interactions. Developing warehouse management system using Android Studio (Java) with real-time tracking capabilities. Creating REST APIs for seamless integration between different systems. Implementing complex database solutions with PostgreSQL for efficient data management. Working on supply chain optimization using C# and SQL for inventory management. Developing modern solutions for logistics optimization and real-time tracking.",
+      description: "Full-stack development of applications and supply chain solutions. Led the development of Yummzy Meal Planner using Flutter for cross-platform mobile development. Implemented OpenAI API integration for intelligent meal suggestions and user interactions. Developed warehouse management system using Android Studio (Java) with real-time tracking capabilities. Created REST APIs for seamless integration between different systems. Implemented complex database solutions with PostgreSQL for efficient data management. Worked on supply chain optimization using C# and SQL for inventory management. Developed modern solutions for logistics optimization and real-time tracking.",
       location: "E.R.S. Rokada",
       link: "https://ers-rokada.si/",
       skills: [

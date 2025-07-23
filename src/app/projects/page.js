@@ -86,7 +86,7 @@ Technical Implementations:
     title: "Yummzy AI Meal Planner",
     description: "Full-stack AI-powered meal planning application with mobile app, backend infrastructure, and cloud deployment.",
     longDescription: `
-Led the complete development of Yummzy, an AI-based meal planning application, from infrastructure setup to deployment. Managed both frontend and backend development, including cloud infrastructure on AWS, database design, and API development.
+Developed Yummzy, an AI-based meal planning application, from infrastructure setup to deployment. Managed both frontend and backend development, including cloud infrastructure on AWS, database design, and API development.
 
 Key Contributions:
 • Infrastructure & DevOps:
