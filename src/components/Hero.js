@@ -110,7 +110,7 @@ export default function Hero() {
               <span className="relative z-10">Start a Project</span>
             </motion.a>
             <motion.a
-              href="/files/Aleksandar_Gjorgev_CV.pdf"
+              href="/files/Aleksandar_Gjorgev_CV.docx"
               download
               className="group flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 bg-card/50 backdrop-blur-sm border-2 border-accent text-accent rounded-lg hover:bg-accent/10 transition-all text-sm md:text-base font-mono"
               whileHover={{ scale: 1.05 }}
