@@ -8,6 +8,7 @@ import { FaBootstrap, FaCss3Alt, FaDocker, FaHtml5, FaJsSquare, FaLaravel, FaNod
 import { SiCplusplus, SiFlask, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
 const projects = [
+  
   {
     title: "Self-Service POS System",
     description: "Fully automated self-service POS system for Printec Group with zero staff requirements, integrating cash register, kiosk, and payment systems.",
@@ -224,7 +225,7 @@ Technical Stack:
     title: "Lumen Cosmetics Salon",
     description: "Modern website for a cosmetics salon with online booking system.",
     longDescription: `
-Currently developing a feature-rich website for Lumen Cosmetics Salon, focusing on a seamless customer experience and integrated marketing tools. Lumen's site will combine a sleek Next.js frontend, a robust booking system, and extensive marketing integrations.
+Currently developing a feature-rich website for Lumen Cosmetics Salon, focusing on a seamless customer experience and integrated marketing tools. Lumen's site combines a sleek Next.js frontend, a robust booking system, and extensive marketing integrations.
 
 Key Contributions (Ongoing):
 • Setting up Next.js project structure and creating accessible, responsive layouts using TailwindCSS  
@@ -233,22 +234,33 @@ Key Contributions (Ongoing):
 • Integrating with a headless CMS (Prismic) to manage service descriptions, staff profiles, and pricing dynamically  
 • Implementing client-side form validation and connecting booking requests to backend APIs for real-time availability checks  
 • Ensuring SEO-friendly markup: custom meta tags, Open Graph tags, structured data (JSON-LD for local business), and sitemap generation  
-• Embedding Google Analytics and setting up Google Tag Manager for event tracking (booking clicks, form submissions)  
-• Planning marketing automation: SEO keyword research, on-page optimization (alt tags, heading hierarchy), and schema markup for local search  
-• Preparing Google Ads campaign structure: ad groups by service type, geo-targeting within Ljubljana area, and conversion tracking setup  
-• Designing Facebook & Instagram ad creatives and flow: custom audiences (retargeting site visitors), pixel integration, and A/B testing ad copy  
+
+Backend & API Integrations:
+• Developed backend system with Google Calendar API integration for real-time appointment scheduling and availability management
+• Implemented Stripe Payment API for secure online payment processing and subscription management
+• Integrated OpenAI API to create an intelligent chatbot for customer support, answering FAQs, and assisting with booking inquiries
+• Built automated email marketing system using Brevo (formerly Sendinblue) for customer communications, booking confirmations, and promotional campaigns
+• Configured real-time synchronization between booking system and Google Calendar to prevent double bookings
+
+Analytics & Marketing Integration:
+• Implemented Google Analytics for comprehensive website traffic analysis, user behavior tracking, and conversion monitoring
+• Integrated Facebook Pixel for advanced tracking of user interactions, conversion events, and retargeting campaigns
+• Set up Google Tag Manager for centralized tag management and event tracking (booking clicks, form submissions, payment completions)
+• Configured conversion tracking for Google Ads and Meta Ads campaigns with proper attribution
+• Designed Facebook & Instagram ad creatives and flow: custom audiences (retargeting site visitors), pixel integration, and A/B testing ad copy
+• Prepared Google Ads campaign structure: ad groups by service type, geo-targeting within Ljubljana area, and conversion tracking setup
 
 Anticipated Features:
 • User account creation for viewing past bookings and rebooking favorite services  
 • Admin dashboard for staff to view and manage appointments, client details, and service inventory  
-• Integration of email/SMS notifications for booking confirmations and reminders  
+• Enhanced chatbot capabilities with personalized recommendations based on customer history
 • Analytics dashboard showing booking trends, conversion rates, and ad performance metrics  
 
 SEO & Marketing Integration:
 • Local SEO optimization for "Ljubljana cosmetics salon" and related keywords
 • Google My Business optimization and review management
 • Facebook and Instagram business page integration
-• Email marketing automation for customer retention
+• Email marketing automation for customer retention via Brevo
 • SMS marketing for appointment reminders and promotions
 • Google Ads and Meta Ads campaigns for lead generation
 • Content marketing strategy for beauty and wellness topics
@@ -260,31 +272,115 @@ SEO & Marketing Integration:
       { name: "Next.js", icon: SiNextdotjs, color: "bg-black text-white" },
       { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-200 text-teal-800" },
       { name: "React", icon: FaReact, color: "bg-blue-200 text-blue-800" },
-      { name: "Google Analytics", icon: FaTools, color: "bg-yellow-200 text-yellow-800" },
-      { name: "Google Ads & Meta Ads", icon: FaTools, color: "bg-red-200 text-red-800" }
+      { name: "Stripe API", icon: FaTools, color: "bg-indigo-200 text-indigo-800" },
+      { name: "OpenAI API", icon: FaTools, color: "bg-green-200 text-green-800" },
     ],
     imageUrl: "/projects/lumen.png",
     projectUrl: "https://www.lumen-estetika.si",
     status: "in-progress",
     challenges: `
 • Designing an intuitive, mobile-first booking flow that minimizes user friction  
-• Ensuring real-time synchronization between frontend availability checks and backend scheduling logic  
+• Ensuring real-time synchronization between frontend availability checks and Google Calendar API for accurate scheduling
+• Implementing secure payment processing with Stripe API while maintaining smooth user experience
+• Integrating OpenAI chatbot to provide accurate, context-aware responses for customer inquiries
+• Managing email marketing automation with Brevo for timely booking confirmations and promotional campaigns
+• Configuring Facebook Pixel and Google Analytics for accurate conversion tracking and attribution
 • Maintaining SEO best practices while using dynamic client-side rendering in Next.js  
 • Structuring Google Ads and Facebook/Instagram campaigns to maximize ROI for a local salon  
 • Implementing analytics for booking funnels and ad performance in a unified dashboard  
 • Optimizing for local search visibility and Google My Business performance
 • Managing multiple marketing channels and tracking cross-platform attribution
 • Balancing automation with personalized customer experience
+• Handling API rate limits and ensuring reliable integration between multiple third-party services
 `,
     impact: `
 • Aims to increase online bookings by 50% within three months of launch through optimized UX and marketing campaigns  
 • Expected 30% growth in new client acquisitions through targeted Google Ads and Meta Ads strategies  
 • Improved SEO visibility for local searches (e.g., "Ljubljana cosmetics salon")  
-• Streamlined appointment management for salon staff, reducing no-shows by 25% via automated reminders  
-• Enhanced customer retention through loyalty programs and automated follow-ups
-• Increased brand awareness through social media and influencer partnerships
-• Better ROI tracking and optimization across all marketing channels
-• Improved customer satisfaction through seamless booking experience
+• Streamlined appointment management for salon staff through Google Calendar integration, reducing no-shows by 25% via automated reminders  
+• Enhanced customer experience with AI-powered chatbot providing instant support and booking assistance
+• Secure and seamless payment processing with Stripe API, increasing conversion rates
+• Automated email marketing via Brevo improving customer engagement and retention
+• Advanced tracking with Facebook Pixel and Google Analytics enabling data-driven marketing decisions
+• Better ROI tracking and optimization across all marketing channels with comprehensive analytics
+• Improved customer satisfaction through seamless booking experience and automated communications
+• Real-time availability management preventing double bookings and scheduling conflicts
+• Increased operational efficiency through automated workflows and integrations
+`
+  },
+  {
+    title: "VicoChat",
+    description: "Modern landing page for VicoChat - AI chatbot platform for businesses, featuring interactive demo, package pricing, and seamless integrations.",
+    longDescription: `
+Developed a comprehensive landing page for VicoChat, a leading Slovenian platform for creating intelligent chatbots. The website showcases AI chatbot solutions for businesses with modern design, interactive features, and seamless user experience.
+
+Key Contributions:
+• Designed and developed a modern, responsive landing page using Next.js and TailwindCSS
+• Implemented interactive AI chatbot demo using OpenAI API for real-time customer interactions
+• Created dynamic package pricing sections (Osnovni, Pro, Pro Plus) with feature comparisons
+• Built comprehensive FAQ section with expandable answers for better user engagement
+• Developed contact forms with email integration for lead generation
+• Implemented smooth animations and transitions using Framer Motion for enhanced UX
+• Created SEO-optimized structure with proper meta tags and semantic HTML
+• Designed mobile-first responsive layout ensuring optimal experience across all devices
+
+Frontend Development:
+• Next.js for server-side rendering and optimal performance
+• TailwindCSS for modern, responsive styling and consistent design system
+• React components for reusable UI elements (pricing cards, FAQ items, contact forms)
+• Framer Motion for smooth animations and page transitions
+• Responsive design ensuring perfect display on mobile, tablet, and desktop
+
+AI Integration:
+• Integrated OpenAI API for interactive chatbot demo functionality
+• Implemented real-time chat interface allowing visitors to test AI capabilities
+• Created seamless user experience for chatbot interactions
+• Configured API endpoints for secure communication with OpenAI services
+
+Features & Sections:
+• Hero section with compelling value proposition and call-to-action
+• Interactive AI chatbot demo with real-time responses
+• Package comparison with detailed feature lists
+• Integration showcase (websites, communication tools, documents)
+• FAQ section with common questions and answers
+• Contact form with email integration
+• Footer with company information and links
+
+Technical Implementation:
+• Next.js App Router for modern routing and performance
+• TailwindCSS utility classes for efficient styling
+• OpenAI API integration for chatbot functionality
+• Form handling and validation
+• SEO optimization with proper meta tags
+• Performance optimization with image optimization and code splitting
+• Accessibility features for better user experience
+`,
+    technologies: [
+      { name: "Next.js", icon: SiNextdotjs, color: "bg-black text-white" },
+      { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-200 text-teal-800" },
+      { name: "React", icon: FaReact, color: "bg-blue-200 text-blue-800" },
+      { name: "OpenAI API", icon: FaTools, color: "bg-green-200 text-green-800" }
+    ],
+    imageUrl: "/projects/vico.png",
+    projectUrl: "https://www.vico.si",
+    challenges: `
+• Implementing interactive chatbot demo with OpenAI API while maintaining fast response times
+• Creating intuitive package comparison interface that clearly communicates value propositions
+• Ensuring seamless user experience across all device sizes
+• Optimizing page load times with multiple interactive components
+• Balancing design aesthetics with conversion optimization
+• Implementing smooth animations without impacting performance
+• Creating accessible forms and interactive elements
+`,
+    impact: `
+• Modern, professional landing page showcasing VicoChat's AI chatbot solutions
+• Interactive demo allowing potential customers to experience AI capabilities firsthand
+• Clear package presentation helping customers choose the right solution
+• Improved lead generation through optimized contact forms
+• Enhanced brand presence with modern, responsive design
+• Better user engagement through interactive elements and smooth animations
+• SEO-optimized structure improving search engine visibility
+• Mobile-friendly design ensuring accessibility for all users
 `
   },
   {
@@ -351,7 +447,7 @@ Tehnična implementacija:
       { name: "TailwindCSS", icon: SiTailwindcss, color: "bg-teal-200 text-teal-800" },
       { name: "React", icon: FaReact, color: "bg-blue-200 text-blue-800" }
     ],
-    imageUrl: "/projects/vico.png",
+    imageUrl: "/projects/vico-solutions.png",
     projectUrl: "https://www.vicosolutions.info"
   },
   {
